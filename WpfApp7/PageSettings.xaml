@@ -1,0 +1,21 @@
+﻿<Page x:Class="WpfApp7.PageSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp7"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageSettings">
+
+    <StackPanel Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Ваш текст (сохраняется в файл):" FontSize="16" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="InputTextBox" Height="100" Width="400" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,15"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Сохранить текст" Width="150" Height="30" Margin="0,0,10,0" Click="Save_Click" ToolTip="Сохранить текст в файл"/>
+            <Button Content="Назад в меню" Width="150" Height="30" Click="GoToMenu_Click" ToolTip="Вернуться на главную"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

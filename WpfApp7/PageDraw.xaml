@@ -1,0 +1,38 @@
+﻿<Page x:Class="WpfApp7.PageDraw"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp7"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageDraw">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель инструментов -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+            <Button Content="Назад в меню" Width="120" Margin="5" Click="GoToMenu_Click" ToolTip="Вернуться в меню"/>
+            <Button Content="Красный" Width="80" Margin="5" Click="SetRed_Click" ToolTip="Рисовать красным"/>
+            <Button Content="Зеленый" Width="80" Margin="5" Click="SetGreen_Click" ToolTip="Рисовать зеленым"/>
+            <Button Content="Синий" Width="80" Margin="5" Click="SetBlue_Click" ToolTip="Рисовать синим"/>
+            <Button Content="Очистить" Width="80" Margin="20,5,5,5" Click="ClearCanvas_Click" ToolTip="Очистить холст от линий"/>
+        </StackPanel>
+
+        <!-- Холст для рисования -->
+        <Canvas x:Name="DrawingCanvas" Grid.Row="1" Background="White" Margin="10"
+                MouseDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove" MouseUp="Canvas_MouseUp">
+            <!-- Контекстное меню -->
+            <Canvas.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Очистить холст" Click="ClearCanvas_Click"/>
+                    <MenuItem Header="Выйти в меню" Click="GoToMenu_Click"/>
+                </ContextMenu>
+            </Canvas.ContextMenu>
+        </Canvas>
+    </Grid>
+</Page>
